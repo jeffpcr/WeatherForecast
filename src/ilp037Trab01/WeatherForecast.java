@@ -3,9 +3,7 @@ package ilp037Trab01;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Scanner;
-import org.json.JSONObject;
 
 public class WeatherForecast {
 
@@ -38,7 +36,9 @@ public class WeatherForecast {
 
         System.out.print("Choose display mode (detailed/simple): ");
         String mode = scanner.nextLine();
-
+        
+        scanner.close();
+        
         WeatherDisplayStrategy displayStrategy = mode.equalsIgnoreCase("simple") 
             ? new SimpleWeatherDisplay() 
             : new DetailedWeatherDisplay();
